@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskFlow — To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <div class="topline">
+      <div class="brand"><span class="brand-icon">✓</span> TaskFlow</div>
+      <div class="today" id="today"></div>
+    </div>
+
+    <section class="panel">
+      <header class="hero">
+        <h1>Make today count.</h1>
+        <p>A little progress every day adds up.</p>
+        <div class="stats">
+          <div class="stat"><strong id="totalCount">0</strong><span>Total tasks</span></div>
+          <div class="stat"><strong id="pendingCount">0</strong><span>Pending</span></div>
+          <div class="stat"><strong id="completedCount">0</strong><span>Completed</span></div>
+        </div>
+      </header>
+
+      <div class="content">
+        <form class="entry" id="taskForm">
+          <input id="taskInput" type="text" placeholder="What needs to get done?" maxlength="180" autocomplete="off" aria-label="New task" />
+          <button class="add-btn" type="submit">+ Add task</button>
+        </form>
+
+        <div class="toolbar">
+          <h2>Your tasks</h2>
+          <div class="filters" aria-label="Filter tasks">
+            <button class="filter active" data-filter="all" type="button">All</button>
+            <button class="filter" data-filter="pending" type="button">Pending</button>
+            <button class="filter" data-filter="completed" type="button">Completed</button>
+          </div>
+        </div>
+
+        <ul class="task-list" id="taskList"></ul>
+        <div class="bottom">
+          <span id="remainingText">You're all caught up!</span>
+          <button class="clear-btn" id="clearCompleted" type="button">Clear completed</button>
+        </div>
+      </div>
+    </section>
+    <p class="footer">Built with HTML, CSS & JavaScript · Tasks are saved on this device</p>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
